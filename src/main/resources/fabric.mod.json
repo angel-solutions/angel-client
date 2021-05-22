@@ -6,7 +6,7 @@
   "name": "angel-client",
   "description": "superior utility mod",
   "authors": [
-    "Me!"
+    "Brattlof"
   ],
   "contact": {
     "homepage": "https://github.com/angel-solutions",
@@ -14,7 +14,7 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/angel-client/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -27,10 +27,6 @@
 
   "depends": {
     "fabricloader": ">=0.7.4",
-    "fabric": "*",
     "minecraft": "1.16.x"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
