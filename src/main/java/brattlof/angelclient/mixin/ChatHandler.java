@@ -21,10 +21,12 @@ public class ChatHandler {
         if(message.startsWith("!"))
         {
             callinfo.cancel();
+            
+            message = message.substring(1); // Remove prefix
 
             for(Command command : CommandHandler.commands)
             {
-                if(command.getAlias().equalsIgnoreCase(message.substring(1)))
+                if(command.getAlias().equalsIgnoreCase(message))
                 {
                     command.doCommand();
                     return;
