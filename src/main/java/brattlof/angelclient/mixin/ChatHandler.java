@@ -9,6 +9,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import brattlof.angelclient.command.Command;
+import brattlof.angelclient.command.CommandHandler;
+
 @Mixin(Screen.class)
 public class ChatHandler {
     @Inject(method="sendMessage(Ljava/lang/String;)V", at=@At("HEAD"), cancellable = true)
@@ -18,20 +21,16 @@ public class ChatHandler {
         {
             callinfo.cancel();
 
-            switch(message.toLowerCase().substring(1))
+            for(Command command : CommandHandler.commands)
             {
-                case "kekw":
+                if(command.getAlias().equalsIgnoreCase(message.substring(1)))
                 {
-                    logChatMessage("KEKW");
-                    break;
-                }
-
-                default:
-                {
-                    logChatMessage("Unknown Command");
-                    break;
+                    command.doCommand();
+                    return;
                 }
             }
+
+            logChatMessage("Unknown Command");
         }
     }
 
