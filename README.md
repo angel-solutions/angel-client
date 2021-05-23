@@ -6,5 +6,5 @@ Run these two commands in PowerShell:
 
 ```
 ./gradlew genSources
-.\gradlew eclipse vscode
+.\gradlew vscode
 ```
