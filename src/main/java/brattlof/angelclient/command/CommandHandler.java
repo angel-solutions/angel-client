@@ -7,6 +7,7 @@ import java.util.List;
 
 public class CommandHandler {
     public static List<Command> commands = Arrays.asList(
-        new CmdDupe()
+        new CmdDupe(),
+        new CmdClearInventory()
     );
 }

@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import brattlof.angelclient.command.Command;
 import brattlof.angelclient.command.CommandHandler;
+import brattlof.angelclient.utils.AngelLogger;
 
 @Mixin(Screen.class)
 public class ChatHandler {
@@ -30,12 +31,7 @@ public class ChatHandler {
                 }
             }
 
-            logChatMessage("Unknown Command");
+            AngelLogger.inChat("Unknown Command");
         }
-    }
-
-    private void logChatMessage(String message)
-    {
-        MinecraftClient.getInstance().player.sendMessage(Text.of("[Angel] " + message), false);
     }
 }
