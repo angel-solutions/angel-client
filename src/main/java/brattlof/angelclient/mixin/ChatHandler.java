@@ -18,9 +18,9 @@ public class ChatHandler {
         {
             callinfo.cancel();
 
-            switch(message.toLowerCase())
+            switch(message.toLowerCase().substring(1))
             {
-                case "!kekw":
+                case "kekw":
                 {
                     logChatMessage("KEKW");
                     break;
