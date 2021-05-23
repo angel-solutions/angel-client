@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "brattlof.angelclient.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "ChatHandler"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

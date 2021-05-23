@@ -19,10 +19,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.brattlof.angelclient.AngelClient"
+      "brattlof.angelclient.AngelClient"
     ]
   },
   "mixins": [
+    "angel-client.mixins.json"
   ],
 
   "depends": {
