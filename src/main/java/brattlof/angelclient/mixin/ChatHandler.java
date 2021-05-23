@@ -18,7 +18,7 @@ public class ChatHandler {
     @Inject(method="sendMessage(Ljava/lang/String;)V", at=@At("HEAD"), cancellable = true)
     public void sendChatMessageOverride(String message, CallbackInfo callinfo)
     {
-        if(message.toLowerCase().startsWith("!"))
+        if(message.startsWith("!"))
         {
             callinfo.cancel();
 
